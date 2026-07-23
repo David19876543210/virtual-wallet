@@ -1,0 +1,21 @@
+name: Pushpen Docs
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history — needed the first time this repo runs, for commit-history-based changelog generation
+
+      - uses: David19876543210/pushpen-action@v1
+        with:
+          api-key: ${{ secrets.PUSHPEN_API_KEY }}
