@@ -19,3 +19,4 @@ jobs:
       - uses: David19876543210/pushpen-action@v1
         with:
           api-key: ${{ secrets.PUSHPEN_API_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
