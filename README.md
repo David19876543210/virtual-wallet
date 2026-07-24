@@ -1,94 +1,105 @@
 # Virtual Wallet System
 
-## Project Description
+A virtual wallet system built with Laravel 6 and Flutterwave's Rave Payment Gateway.
 
-The project is a virtual wallet system built with [Laravel 6](https://laravel.com) and [Flutterwave's Rave Payment Gateway](https://flutterwave.com). The features of this project include
+## Features
 
-1. Registration and Authentication of users.
-2. Deposit of funds into an online wallet
-3. Transfer of funds via the online wallet to other users.
-4. Withdrawal of funds to accounts with banks supported by rave.
+1. User registration and authentication
+2. Deposit funds into an online wallet
+3. Transfer funds to other users via the online wallet
+4. Withdraw funds to bank accounts supported by Rave
 5. Email notification after registration
 
-## Project Setup(Web Portal)
+## Tech Stack
 
-### Cloning the GitHub Repository.
+- **Framework:** Laravel 6
+- **Payment Gateway:** Flutterwave Rave
+- **Front-end:** Bootstrap, jQuery, Popper.js
+- **Development Tools:** Laravel Mix, Axios, Lodash, Vue.js
 
-Clone the repository to your local machine by running the terminal command below.
+## Prerequisites
 
-```bash
-git clone https://github.com/Ojsholly/virtual-wallet
-```
+- PHP 7.2 or higher
+- MySQL database
+- Composer
+- Node.js and npm
 
-### Setup Database
+## Installation
 
-Create your a MySQL database and note down the required connection parameters. (DB Host, Username, Password, Name)
+1. **Clone the repository:**
 
-### Install Composer Dependencies
+   ```bash
+   git clone https://github.com/Ojsholly/virtual-wallet
+   ```
 
-Navigate to the project root directory via terminal and run the following command.
+2. **Install Composer dependencies:**
 
-```bash
-composer install
-```
+   ```bash
+   composer install
+   ```
 
-### Install NPM Dependencies
+3. **Install NPM dependencies:**
 
-While still in the project root directory via terminal, run the following command.
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+   or
 
-or if you use yarn instead
+   ```bash
+   yarn
+   ```
 
-```bash
-yarn
-```
+4. **Create a copy of the `.env` file:**
 
-### Create a copy of your .env file
+   ```bash
+   cp .env.example .env
+   ```
 
-Run the following command
+   Update the `.env` file with your database connection details and other environment variables.
 
-```bash
-cp .env.example .env
-```
+5. **Generate an application key:**
 
-This should create an exact copy of the .env.example file. Name the newly created file .env and update it with your local environment variables (database connection info and others).
+   ```bash
+   php artisan key:generate
+   ```
 
-### Generate an app encryption key
+6. **Run database migrations:**
 
-```bash
-php artisan key:generate
-```
+   ```bash
+   php artisan migrate
+   ```
 
-### Migrate the database
+7. **Add Rave payment gateway environment variables:**
 
-```bash
-php artisan migrate
-```
+   ```
+   RAVE_TEST_PUBLIC_KEY=
+   RAVE_TEST_SECRET_KEY=
+   RAVE_SECRET_KEY=
+   RAVE_PUBLIC_KEY=
+   ```
 
-### Add the required environment varaiables.
+   Ensure to use the test keys for development. For production, replace the test keys with the live keys from your Flutterwave dashboard.
 
-RAVE_TEST_PUBLIC_KEY
-RAVE_TEST_SECRET_KEY
+8. **Start the development server:**
 
-RAVE_SECRET_KEY
-RAVE_PUBLIC_KEY
+   ```bash
+   php artisan serve
+   ```
 
-Kindly note that as long as the test keys are used in the project, the debit cards and bank accounts to be used are to be gotten from the (rave documentation)[https://developer.flutterwave.com/docs].
+   The application will be available at `http://localhost:8000`.
 
-### Future Possible Updates
+## Usage
 
-The following features are to be added in the next available upgrade of the system.
+1. **Register a new user**
+2. **Deposit funds into the wallet**
+3. **Transfer funds to other users**
+4. **Withdraw funds to a bank account**
 
-1. Addition of functionality to request funds from other users.
-2. Addition of support for multiple user bank accounts.
+## Contributing
 
-### License
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or feature requests.
 
-[MIT](https://choosealicense.com/licenses/mit/)
-"test" 
-"test1" 
+## License
 
-<!-- pushpen-action e2e test: action.yml github.token fix, 2026-07-24T05:16:01Z -->
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
